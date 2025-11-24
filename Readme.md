@@ -1,9 +1,9 @@
 # Личный проект «Седона»
 
 * Студент: [Артем Ткачев](https://up.htmlacademy.ru/htmlcss-individual/2/user/2416991).
-* Наставник: `Неизвестно`.
+* Наставник: [Виктория Никитина](https://htmlacademy.ru/profile/id1217273).
+* [Проект Седона на github](https://github.com/thomasweaverson/2416991-sedona-2)
 
----
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
 _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`._
