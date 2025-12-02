@@ -38,7 +38,7 @@
       </nav>
     </header>
 
-    <main class="main--catalog" data-test="main">
+    <main class="main main--catalog" data-test="main">
 
       <header class="main-header">
         <h1 class="main-title">Гостиницы Седоны</h1>
@@ -314,44 +314,48 @@
 
     </main>
 
-    <section class="subscribe" data-test="subscribe">
-      <h2 class="section-title">Подпишитесь на рассылку</h2>
-      <p class="section-description">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
+      <footer class="page-footer" data-test="footer">
 
-      <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-        <label class="subscribe-field">
-          <span class="visually-hidden">Адрес вашей электронной почты</span>
-          <input class="field-input" type="email" name="email" placeholder="Ваш e-mail" required>
-        </label>
-        <button class="subscribe-button button" type="submit">Подписаться</button>
-      </form>
-    </section>
+      <section class="subscribe" data-test="subscribe">
+        <h2 class="section-title">Подпишитесь на рассылку</h2>
+        <p class="section-description">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
 
-    <footer class="page-footer" data-test="footer">
-      <ul class="footer-social social">
-        <li class="social-item">
-          <a class="social-link" href="https://vk.com/htmlacademy" target="_blank" rel="noopener noreferrer">
-            <span class="visually-hidden">Вконтакте</span>
-          </a>
-        </li>
-        <li class="social-item">
-          <a class="social-link" href="https://t.me/htmlacademy" target="_blank" rel="noopener noreferrer">
-            <span class="visually-hidden" lang="en">Telegram</span>
-          </a>
-        </li>
-        <li class="social-item">
-          <a class="social-link" href="https://www.youtube.com/user/htmlacademyru" target="_blank"
-            rel="noopener noreferrer">
-            <span class="visually-hidden" lang="en">YouTube</span>
-          </a>
-        </li>
-      </ul>
+        <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
+          <label class="subscribe-field">
+            <span class="visually-hidden">Адрес вашей электронной почты</span>
+            <input class="field-input" type="email" name="email" placeholder="Ваш e-mail" required>
+          </label>
+          <button class="subscribe-button button" type="submit">Подписаться</button>
+        </form>
+      </section>
 
-      <a class="footer-phone phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+      <div class="footer-container">
+        <ul class="footer-social social">
+          <li class="social-item">
+            <a class="social-link" href="https://vk.com/htmlacademy" target="_blank" rel="noopener noreferrer">
+              <span class="visually-hidden">Вконтакте</span>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="https://t.me/htmlacademy" target="_blank" rel="noopener noreferrer">
+              <span class="visually-hidden" lang="en">Telegram</span>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="https://www.youtube.com/user/htmlacademyru" target="_blank"
+              rel="noopener noreferrer">
+              <span class="visually-hidden" lang="en">YouTube</span>
+            </a>
+          </li>
+        </ul>
 
-      <a class="footer-copyright copyright" href="https://htmlacademy.ru/" target="_blank" rel="noopener noreferrer">
-        <span class="visually-hidden">Разработано в HTML Academy</span>
-      </a>
+        <a class="footer-phone phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+
+        <a class="footer-copyright copyright" href="https://htmlacademy.ru/" target="_blank" rel="noopener noreferrer">
+          <span class="visually-hidden">Разработано в HTML Academy</span>
+          <img class="copyright-logo" src="images/htmlacademy-logo.svg" width="115" height="33" alt="логотип HTML Academy">
+        </a>
+      </div>
 
     </footer>
   </body>
