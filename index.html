@@ -35,15 +35,15 @@
               <span class="visually-hidden">Избранное</span>
               <span class="icon-quantity">12</span>
             </a>
-            <a class="button" href="#">Хочу сюда!</a>
+            <a class="button user-action user-action--button" href="#">Хочу сюда!</a>
           </div>
 
         </nav>
       </header>
 
-      <main class="main main--index" data-test="main">
+      <main class="main" data-test="main">
 
-        <section class="welcome" data-test="hero">
+        <section class="welcome" data-test="welcome">
           <h1 class="visually-hidden">Туристический город Седона</h1>
           <img class="welcome-image" src="images/welcome.svg" width="458" height="352"
             alt="Welcome to the gorgeous Sedona. 'Because the Grand Canyon sucks!'">
@@ -52,14 +52,15 @@
         <section class="reasons" data-test="reasons">
           <h2 class="visually-hidden">Преимущества Cедоны</h2>
 
-          <p class="section-title">Седона — небольшой городок в Аризоне,<br> заслуживающий большего!</p>
-          <p class="section-description">Рассмотрим 5 причин, по которым Седона круче, чем Гранд-Каньон!</p>
+          <p class="section-title reasons-title">Седона — небольшой городок в Аризоне, заслуживающий&nbsp;большего!</p>
+          <p class="section-description reasons-description">Рассмотрим причины, по которым Седона круче, чем
+            Гранд-Каньон!</p>
 
           <ul class="reasons-list">
             <li class="reasons-item reasons-item--has-image">
               <div class="reasons-card reason">
                 <h3 class="reason-title">Настоящий городок</h3>
-                <p class="reason-description">Седона не аттракцион для туристов, там течёт своя жизнь</p>
+                <p class="reason-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               </div>
               <img class="reason-image" src="images/content/sedona-city.jpg" width="800" height="385"
                 alt="Фото Седоны, малоэтажные аутентичные деревянные здания">
@@ -86,9 +87,9 @@
               </div>
             </li>
 
-            <li class="reasons-item reasons-item--has-image">
+            <li class="reasons-item reasons-item--has-image reasons-item--reversed">
               <div class="reasons-card reason">
-                <h3 class="reason-title">Там есть мост дьявола</h3>
+                <h3 class="reason-title">Там&nbsp;есть мост&nbsp;дьявола</h3>
                 <p class="reason-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
               <img class="reason-image" src="images/content/devils-bridge-trail.jpg" width="800" height="385"
@@ -99,23 +100,26 @@
 
         <section class="recommendations">
           <h2 class="visually-hidden">Рекомендации при поездке в Седону</h2>
-          <p class="section-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</p>
-          <p class="section-description">Опытный персонал и качественное обслуживание!</p>
-
+          <div class="recommendations-wrapper">
+            <p class="section-title">Приезжайте в Седону отдохнуть<br>в комфорте и уюте!</p>
+            <p class="section-description">Опытный персонал и качественное обслуживание!</p>
+          </div>
           <ul class="recommendations-list">
             <li class="recommendations-item recommendation recommendation--housing">
               <h3 class="recommendation-title">Жильё</h3>
-              <p class="recommendation-text">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+              <p class="recommendation-text">Рекомендуем пожить в&nbsp;настоящем мотеле, всё&nbsp;как&nbsp;в&nbsp;кино!
+              </p>
             </li>
 
             <li class="recommendations-item recommendation recommendation--food">
               <h3 class="recommendation-title">Еда</h3>
-              <p class="recommendation-text">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
+              <p class="recommendation-text">Всегда заказывайте топовый&nbsp;фирменный бургер,
+                вы&nbsp;не&nbsp;разочаруетесь!</p>
             </li>
 
             <li class="recommendations-item recommendation recommendation--souvenirs">
               <h3 class="recommendation-title">Сувениры</h3>
-              <p class="recommendation-text">Не только китайского, но и настоящего местного производства!</p>
+              <p class="recommendation-text">Не только китайского, но&nbsp;и&nbsp;настоящего местного производства!</p>
             </li>
           </ul>
         </section>
@@ -135,7 +139,8 @@
 
         <section class="subscribe subscribe--accent" data-test="subscribe">
           <h2 class="section-title subscribe-title">Подпишитесь на рассылку</h2>
-          <p class="section-description subscribe-description">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
+          <p class="section-description subscribe-description">Только полезная информация и никакого спама,
+            честное&nbsp;бойскаутское!</p>
 
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="subscribe-field">
@@ -149,18 +154,20 @@
         <div class="footer-container">
           <ul class="footer-social social">
             <li class="social-item">
-              <a class="social-link" href="https://vk.com/htmlacademy" target="_blank" rel="noopener noreferrer">
+              <a class="social-link social-link--vkontakte" href="https://vk.com/htmlacademy" target="_blank"
+                rel="noopener noreferrer">
                 <span class="visually-hidden">Вконтакте</span>
               </a>
             </li>
             <li class="social-item">
-              <a class="social-link" href="https://t.me/htmlacademy" target="_blank" rel="noopener noreferrer">
+              <a class="social-link social-link--telegram" href="https://t.me/htmlacademy" target="_blank"
+                rel="noopener noreferrer">
                 <span class="visually-hidden" lang="en">Telegram</span>
               </a>
             </li>
             <li class="social-item">
-              <a class="social-link" href="https://www.youtube.com/user/htmlacademyru" target="_blank"
-                rel="noopener noreferrer">
+              <a class="social-link social-link--youtube" href="https://www.youtube.com/user/htmlacademyru"
+                target="_blank" rel="noopener noreferrer">
                 <span class="visually-hidden" lang="en">YouTube</span>
               </a>
             </li>
