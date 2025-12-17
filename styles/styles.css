@@ -315,24 +315,25 @@ body {
   max-width: 650px;
 }
 
+.subscribe--accent .subscribe-description {
+  color: #ffffff;
+}
+
 .subscribe-form {
   margin: 0 auto;
 
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 684px;
 }
 
-.subscribe-field {}
-
 .subscribe-input {
-  height: 100%;
   background-color: #f2f2f2;
   font-family: inherit;
   border: none;
   font-size: 18px;
   line-height: 24px;
   padding: 14px 20px 14px 20px;
-  min-width: 452px;
   border-radius: 4px 0 0 4px;
 
   transition: background-color 0.2s ease;
@@ -348,11 +349,13 @@ body {
 }
 
 .subscribe-button {
+  min-width: 232px;
   max-width: 300px;
+
   border: none;
   background-color: #82b3d3;
   border-radius: 0 4px 4px 0;
-  min-width: 232px;
+
   font-size: 20px;
   line-height: 36px;
   font-family: inherit;
@@ -497,7 +500,6 @@ body {
 
 .copyright-logo {
   color: inherit;
-  transition: color 0.2s ease;
 }
 
 .copyright:hover,
@@ -560,20 +562,30 @@ body {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
+.reasons-item:not(.reasons-item--has-image) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .reasons-item--has-image {
   background-color: #82b3d3;
   color: #ffffff;
 
   grid-column: 1 / -1;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "card image";
 }
 
 .reasons-item--reversed {
-  flex-direction: row-reverse;
+    grid-template-columns: 2fr 1fr;
+  grid-template-areas: "image card";
 }
 
-.reasons-card {}
+.reasons-card {
+}
 
 .reason {
   padding: 112.5px 20px;
@@ -581,9 +593,10 @@ body {
 }
 
 .reasons-item--has-image .reason {
-  padding: 102px 20px;
-  flex-basis: calc(100% / 3);
+  padding: 103px 20px 101px;
   color: #ffffff;
+
+  grid-area: card;
 }
 
 .reason-title {
@@ -621,8 +634,11 @@ body {
 
 .reason-image {
   display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  flex-basis: calc(100% * 2 / 3);
+
+  grid-area: image;
 }
 
 .recommendations {}
@@ -1186,8 +1202,8 @@ body {
 }
 
 .results-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
   padding: 0 0 40px 0;
@@ -1376,7 +1392,6 @@ body {
   display: block;
   padding: 0 12px;
   min-width: 60px;
-  height: 60px;
 
   font-weight: 700;
   color: #ffffff;
@@ -1389,7 +1404,7 @@ body {
   text-align: center;
   text-decoration: none;
   font-size: 20px;
-  line-height: 57px;
+  line-height: 58px;
 }
 
 .pagination-item--active .pagination-link {
@@ -1404,7 +1419,6 @@ body {
   color: #000000;
   border: 1px solid transparent;
   font-size: 22px;
-  line-height: 58px;
   font-weight: 400;
 }
 
