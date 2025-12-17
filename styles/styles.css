@@ -140,12 +140,12 @@ body {
 
 .navigation {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 0 0 0 168px;
 }
 
 .navigation-menu {
-  margin: 0;
+  margin: 0 30px 0 0;
   padding: 0;
   list-style: none;
 
@@ -157,7 +157,7 @@ body {
 
 .navigation-link {
   display: block;
-  padding: 16px;
+  padding: 20px 16px;
 
   text-decoration: none;
   color: #000000;
@@ -176,7 +176,7 @@ body {
 .navigation-link--current::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -1px;
   left: 16px;
   right: 15px;
   height: 2px;
@@ -310,7 +310,7 @@ body {
 }
 
 .subscribe-description {
-  color: inherit;
+  color: #333333;
   margin: 0 auto 55px;
   max-width: 650px;
 }
@@ -325,6 +325,7 @@ body {
 .subscribe-field {}
 
 .subscribe-input {
+  height: 100%;
   background-color: #f2f2f2;
   font-family: inherit;
   border: none;
@@ -347,7 +348,7 @@ body {
 }
 
 .subscribe-button {
-  padding: 0;
+  max-width: 300px;
   border: none;
   background-color: #82b3d3;
   border-radius: 0 4px 4px 0;
@@ -386,6 +387,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 250px;
 }
 
 .social-item {}
@@ -416,14 +418,17 @@ body {
 
 .social-link--vkontakte::before {
   mask-image: url("../images/icons/vkontakte.svg");
+  mask-size: 24px 14px;
 }
 
 .social-link--telegram::before {
   mask-image: url("../images/icons/telegram.svg");
+  mask-size: 18px 16px;
 }
 
 .social-link--youtube::before {
   mask-image: url("../images/icons/youtube.svg");
+  mask-size: 22px 17px;
 }
 
 .social-link:hover,
@@ -442,6 +447,8 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  min-width: 400px;
+  text-align: center;
 }
 
 .telephones-item {}
@@ -724,6 +731,7 @@ body {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 32px 0;
   padding: 0;
   list-style: none;
@@ -733,12 +741,15 @@ body {
   line-height: 16px;
 }
 
+.breadcrumbs-item:first-child {
+  margin: 0 0 0 -8px;
+}
+
 .breadcrumbs-item:not(:last-child) {
   padding: 0 13px 0 0;
   background-image: url("../images/icons/chevron-right.svg");
   background-repeat: no-repeat;
   background-position: right 2px center;
-
 }
 
 .breadcrumbs-link {
@@ -764,7 +775,7 @@ body {
   display: block;
   width: 28px;
   height: 35px;
-  margin: 0 0 0 -8px;
+  margin: 0;
   background-image: url("../images/icons/home.svg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -973,8 +984,6 @@ body {
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
-
-  cursor: grab;
 }
 
 .slider-handle::after {
@@ -999,7 +1008,6 @@ body {
 }
 
 .slider-handle:active {
-  cursor: grabbing;
   box-shadow: 0 7px 15px 0 #00000066;
   outline: 2px solid #83B3D3
 }
@@ -1198,6 +1206,7 @@ body {
   display: grid;
   gap: 0 20px;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr min-content min-content min-content;
   grid-template-areas:
     "image image"
     "title title"
@@ -1210,7 +1219,7 @@ body {
 
 .card:hover {
   border-radius: 4px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .card-title {
@@ -1262,14 +1271,16 @@ body {
   position: relative;
   z-index: 2;
   grid-area: button-details;
-  display: inline-block;
+  display: block;
   border: none;
   padding: 8px;
   border-radius: 4px;
   min-width: 140px;
+  height: fit-content;
   text-align: center;
 
   margin: 0 0 16px;
+  align-self: center;
 }
 
 .card-button:focus {}
@@ -1351,14 +1362,22 @@ body {
   list-style: none;
 
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.pagination-item {
-  width: 60px;
+.pagination-item {}
+
+.pagination-item--active {}
+
+.pagination-item--ellipsis {}
+
+.pagination-link {
+  display: block;
+  padding: 0 12px;
+  min-width: 60px;
   height: 60px;
 
-  text-align: center;
   font-weight: 700;
   color: #ffffff;
 
@@ -1367,50 +1386,37 @@ body {
   border-radius: 4px;
 
   transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.pagination-item--active {
-  background-color: #f2f2f2;
-  color: #000000;
-  border: 1px solid #f2f2f2;
-}
-
-.pagination-item--ellipsis {
-  background-color: transparent;
-  color: #000000;
-  border: 1px solid transparent;
-}
-
-.pagination-item:not(.pagination-item--active):not(.pagination-item--ellipsis):hover,
-.pagination-item:not(.pagination-item--active):not(.pagination-item--ellipsis):focus-within {
-  background-color: #68a2ca;
-}
-
-.pagination-item--ellipsis:hover,
-.pagination-item--ellipsis:focus-within {
-  background-color: #f2f2f2;
-  border: 1px solid #f2f2f2;
-}
-
-.pagination-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 11px 0 0 0;
+  text-align: center;
   text-decoration: none;
-  color: inherit;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 57px;
 }
 
 .pagination-item--active .pagination-link {
   cursor: default;
+  background-color: #f2f2f2;
+  color: #000000;
+  border: 1px solid #f2f2f2;
 }
 
 .pagination-item--ellipsis .pagination-link {
-  padding: 16px 0 0 0;
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid transparent;
   font-size: 22px;
-  line-height: 26px;
+  line-height: 58px;
+  font-weight: 400;
+}
+
+.pagination-item:not(.pagination-item--active, .pagination-item--ellipsis) .pagination-link:hover,
+.pagination-item:not(.pagination-item--active, .pagination-item--ellipsis) .pagination-link:focus {
+  background-color: #68a2ca;
+}
+
+.pagination-item--ellipsis .pagination-link:hover,
+.pagination-item--ellipsis .pagination-link:focus {
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
 }
 
 .pagination-link:active {
