@@ -1411,6 +1411,7 @@ body {
   position: relative;
   margin: auto;
   padding: 64px 70px;
+  max-width: 900px;
   background-color: #ffffff;
   box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
   border-radius: 30px;
@@ -1464,8 +1465,9 @@ body {
 }
 
 .modal-title {
-  text-align-last: left;
+  text-align: left;
   margin: 0 0 64px;
+  padding: 0 80px 0 0;
 }
 
 .search-form {
@@ -1495,8 +1497,15 @@ body {
   gap: 10px;
 }
 
+.date-wrapper {
+  position: relative;
+}
+
+
+
 .date-input {
-  padding: 13px 60px 11px 20px;
+  width: 100%;
+  padding: 13px 76px 11px 20px;
   border: none;
   border-radius: 4px;
   font-family: inherit;
@@ -1510,13 +1519,53 @@ body {
   background-position: right 20px center;
 }
 
-.date-input:hover {
+.date-input:hover,
+.date-wrapper:hover .date-input {
   background-color: #e5e5e5;
 }
 
 .date-input:focus-visible {
   background-color: #e5e5e5;
   outline: 3px solid #83B3D3;
+}
+
+.date-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.date-button:hover {
+  color: #000000;
+}
+
+.date-button:focus-visible {
+  outline: 2px solid #83b3d3;
+  outline-offset: -2px;
+}
+
+.date-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  color: currentcolor;
+  background-color: currentColor;
+
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  mask-image: url("../images/icons/calendar.svg");
 }
 
 .field-message {
@@ -1667,7 +1716,12 @@ body {
   border-radius: 10px;
 }
 
+.tooltip-wrapper {
+  position: relative;
+}
+
 .tooltip {
+  margin: 4px 0 0 0;
   position: relative;
   width: 26px;
   height: 26px;
@@ -1681,11 +1735,15 @@ body {
   background-position: center;
 }
 
+.tooltip--active {
+  outline: 3px solid #615048;
+}
+
 .tooltip-text {
   display: none;
   position: absolute;
 
-  top: 41px;
+  top: 45px;
   left: 50%;
   transform: translateX(-50%);
   width: 256px;
@@ -1693,12 +1751,14 @@ body {
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 20px 18px 23px 22px;
+
   color: #ffffff;
   text-align: left;
-
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
+  font-weight: normal;
+  text-transform: none;
 }
 
 .tooltip-text::before {
@@ -1714,7 +1774,8 @@ body {
   background-position: center;
 }
 
-.tooltip:hover .tooltip-text,
-.tooltip:focus .tooltip-text {
+.tooltip:hover + .tooltip-text,
+.tooltip:focus-visible + .tooltip-text,
+.tooltip--active + .tooltip-text {
   display: block;
 }

@@ -210,14 +210,24 @@
           <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="field-date">
               <label class="field-title" for="date-from">Дата заезда:</label>
-              <input class="date-input" type="text" name="date-from" id="date-from" placeholder="Укажите дату"
+              <div class="date-wrapper">
+                <input class="date-input" type="text" name="date-from" id="date-from" placeholder="Укажите дату"
                 value="27 апреля 2020">
+                <button class="date-button" type="button">
+                  <span class="visually-hidden">Выбрать дату заезда</span>
+                </button>
+              </div>
               <span class="field-message field-message--error">Мы не можем отправить вас в прошлое.</span>
             </div>
             <div class="field-date">
               <label class="field-title" for="date-to">Дата выезда:</label>
-              <input class="date-input" type="text" name="date-to" id="date-to" placeholder="Укажите дату"
+              <div class="date-wrapper">
+                <input class="date-input" type="text" name="date-to" id="date-to" placeholder="Укажите дату"
                 value="1 сентября 2023">
+                <button class="date-button" type="button">
+                  <span class="visually-hidden">Выбрать дату выезда</span>
+                </button>
+              </div>
               <span class="field-message">На эти даты есть свободные номера. Пока есть.</span>
             </div>
             <div class="field-guests">
@@ -242,12 +252,14 @@
               <div class="field-people field-people--children">
                 <label class="field-title field-title--with-tooltip" for="children">
                   Дети:
-                  <button class="tooltip" role="tooltip" aria-labelledby="children-quantity-tooltip">
+                  <div class="tooltip-wrapper">
+                    <button class="tooltip" type="button" role="tooltip" aria-labelledby="children-quantity-tooltip">
+                    </button>
                     <span class="tooltip-text" id="children-quantity-tooltip">
                       Укажите количество детей, которые будут с
                       вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
                     </span>
-                  </button>
+                  </div>
                 </label>
 
                 <div class="guests-quantity">
@@ -275,6 +287,7 @@
       const overlay = document.querySelector('.modal-overlay');
       const closeButton = document.querySelector('.modal-close-button');
       const form = document.querySelector('.search-form');
+      const tooltip = document.querySelector('.tooltip');
       const body = document.body;
 
       const HIDDEN_CLASS = 'modal-overlay--hidden';
@@ -312,6 +325,11 @@
         }
       }
 
+      function onTooltipClick(event) {
+        event.preventDefault();
+        tooltip.classList.toggle('tooltip--active');
+      }
+
       if (openButton && overlay) {
         openButton.addEventListener('click', openModal);
 
@@ -324,6 +342,10 @@
         if (closeButton) {
           closeButton.addEventListener('click', closeModal);
         }
+      }
+
+      if (tooltip) {
+        tooltip.addEventListener('click', onTooltipClick);
       }
     </script>
   </body>
