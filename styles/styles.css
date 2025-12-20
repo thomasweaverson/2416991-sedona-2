@@ -39,6 +39,10 @@ img {
   object-fit: contain;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -796,11 +800,11 @@ body {
   transition: opacity 0.2s ease;
 }
 
-.breadcrumbs-link:hover {
+.breadcrumbs-link:not(.breadcrumbs-link--current):hover {
   opacity: 0.6;
 }
 
-.breadcrumbs-link:active {
+.breadcrumbs-link:not(.breadcrumbs-link--current):active {
   opacity: 0.3;
 }
 
@@ -1101,6 +1105,8 @@ body {
   background-image: url("../images/icons/chevron-down.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
+
+  cursor: pointer;
 }
 
 .sorting-select:hover,
@@ -1257,6 +1263,10 @@ body {
   margin: 0 0 16px 0;
 }
 
+.card-price--value {
+  font-weight: 400;
+}
+
 .card-button {
   position: relative;
   z-index: 2;
@@ -1320,6 +1330,10 @@ body {
   line-height: 20px;
   padding: 9px 22px 8px 23px;
   margin: 0;
+}
+
+.card-rate--value {
+  font-weight: 400;
 }
 
 .pagination-list {
@@ -1500,8 +1514,6 @@ body {
 .date-wrapper {
   position: relative;
 }
-
-
 
 .date-input {
   width: 100%;
