@@ -50,6 +50,10 @@ body {
   color: #333333;
 }
 
+.body--locked {
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   flex-direction: column;
