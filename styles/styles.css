@@ -1411,46 +1411,30 @@ body {
   position: absolute;
   top: 64px;
   right: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 52px;
   height: 52px;
   border: none;
   border-radius: 50%;
   background-color: #f2f2f2;
   cursor: pointer;
-}
-
-.modal-close-button::after,
-.modal-close-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 2px;
-  background-color: #000000;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.modal-close-button::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  fill: #000000;
 }
 
 .modal-close-button:hover {
-  background-color: #e5e5e5;
+  background-color: #e6e6e6;
 }
 
 .modal-close-button:focus-visible {
   outline: 3px solid #83b3d3;
-  background-color: #e5e5e5;
+  background-color: #e6e6e6;
 }
 
 .modal-close-button:active {
-  background-color: #e5e5e5;
-}
-
-.modal-close-button:active::after,
-.modal-close-button:active::before {
-  opacity: 0.3;
+  background-color: #e6e6e6;
+  fill: rgba(0, 0, 0, 0.3);
 }
 
 .modal-title {
