@@ -518,7 +518,7 @@ body {
   background-size: cover;
   color: #f2f2f2;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 57px), calc(100% - 250px) calc(100% - 33px), calc(100% - 250px) calc(100% - 57px), 50% 100%, 250px calc(100% - 57px), 250px calc(100% - 33px), 0 calc(100% - 57px));
-          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 57px), calc(100% - 250px) calc(100% - 33px), calc(100% - 250px) calc(100% - 57px), 50% 100%, 250px calc(100% - 57px), 250px calc(100% - 33px), 0 calc(100% - 57px));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 57px), calc(100% - 250px) calc(100% - 33px), calc(100% - 250px) calc(100% - 57px), 50% 100%, 250px calc(100% - 57px), 250px calc(100% - 33px), 0 calc(100% - 57px));
 }
 
 .welcome-image {
@@ -918,14 +918,14 @@ body {
   line-height: 24px;
   transition: background-color 0.2s ease;
   -webkit-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 
 .range-input::-webkit-inner-spin-button,
 .range-input::-webkit-outer-spin-button {
   margin: 0;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .range-input:disabled {
@@ -1062,7 +1062,7 @@ body {
   line-height: 21px;
   cursor: pointer;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .sorting-select:hover,
@@ -1608,14 +1608,14 @@ body {
   line-height: 20px;
   text-align: center;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .quantity-input::-webkit-outer-spin-button,
 .quantity-input::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .quantity-input:disabled {
@@ -1637,23 +1637,17 @@ body {
   place-self: center center;
   width: 20px;
   height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   border: none;
   border-radius: 4px;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-}
-
-.quantity-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  background-color: rgba(117, 97, 87, 0.3);
-  transform: translate(-50%, -50%);
+  fill: rgba(117, 97, 87, 0.3);
 }
 
 .quantity-button::before {
@@ -1668,30 +1662,24 @@ body {
   pointer-events: all;
 }
 
-.quantity-button:disabled {
+.quantity-button:disabled,
+.quantity-input:disabled ~ .quantity-button {
+  fill: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
   cursor: default;
 }
 
-.quantity-button:disabled::after,
-.quantity-input:disabled ~ .quantity-button::after {
-  background-color: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-}
-
-.quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):hover::after {
-  background-color: #000000;
-}
-
-.quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):focus-visible::after {
-  background-color: #000000;
+.quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):hover {
+  fill: #000000;
 }
 
 .quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):focus-visible {
   outline: 3px solid #83b3d3;
+  fill: #000000;
 }
 
-.quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):active::after {
-  background-color: rgba(0, 0, 0, 0.2);
+.quantity-input:not(:disabled) ~ .quantity-button:not(:disabled):active {
+  fill: rgba(0, 0, 0, 0.2);
 }
 
 .quantity-button--minus {
@@ -1700,16 +1688,6 @@ body {
 
 .quantity-button--plus {
   grid-column: -2 / -1;
-}
-
-.quantity-button--plus::after {
-  -webkit-clip-path: polygon(8px 0, 8px 6px, 14px 6px, 14px 8px, 8px 8px, 8px 14px, 6px 14px, 6px 8px, 0 8px, 0 6px, 6px 6px, 6px 0);
-          clip-path: polygon(8px 0, 8px 6px, 14px 6px, 14px 8px, 8px 8px, 8px 14px, 6px 14px, 6px 8px, 0 8px, 0 6px, 6px 6px, 6px 0);
-}
-
-.quantity-button--minus::after {
-  -webkit-clip-path: polygon(0 6px, 14px 6px, 14px 8px, 0 8px);
-          clip-path: polygon(0 6px, 14px 6px, 14px 8px, 0 8px);
 }
 
 .modal-submit {
