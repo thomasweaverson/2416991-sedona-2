@@ -2,13 +2,12 @@ const openButton = document.querySelector(".search-button");
 const overlay = document.querySelector(".modal-overlay");
 const closeButton = document.querySelector(".modal-close-button");
 const form = document.querySelector(".search-form");
-const tooltip = document.querySelector(".tooltip");
 const body = document.body;
 
 const HIDDEN_CLASS = "modal-overlay--hidden";
 const BODY_LOCK_CLASS = "body--locked";
 
-let isOpen = false;
+let isOpen = !overlay.classList.contains(HIDDEN_CLASS);
 
 function openModal(event) {
   event.preventDefault();
@@ -25,7 +24,6 @@ function closeModal() {
 
   overlay.classList.add(HIDDEN_CLASS);
   body.classList.remove(BODY_LOCK_CLASS);
-  tooltip.classList.remove("tooltip--active");
   document.removeEventListener("keydown", onEscPress);
 
   if (form) {
@@ -41,11 +39,6 @@ function onEscPress(event) {
   }
 }
 
-function onTooltipClick(event) {
-  event.preventDefault();
-  tooltip.classList.toggle("tooltip--active");
-}
-
 if (openButton && overlay) {
   openButton.addEventListener("click", openModal);
 
@@ -58,8 +51,4 @@ if (openButton && overlay) {
   if (closeButton) {
     closeButton.addEventListener("click", closeModal);
   }
-}
-
-if (tooltip) {
-  tooltip.addEventListener("click", onTooltipClick);
 }
