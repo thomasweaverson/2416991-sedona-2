@@ -114,6 +114,18 @@ body {
   background-color: transparent;
 }
 
+/*  для отключения кнопки - атрибут disabled,
+    для ссылки - класс и tab index инлайн */
+.button:disabled,
+.button--disabled,
+.button--disabled:hover,
+.button--disabled:focus,
+.button--disabled:active {
+  outline: none;
+  background-color: #e5e5e5;
+  pointer-events: none;
+}
+
 .button--basic:disabled,
 .button--alternate:disabled,
 .button--accent:disabled {
@@ -167,18 +179,6 @@ body {
 
 .button--ghost:not(:disabled, .button--disabled):active {
   color: rgba(255, 255, 255, 0.3);
-}
-
-/*  для отключения кнопки - атрибут disabled,
-    для ссылки - класс и tab index инлайн */
-.button:disabled,
-.button--disabled,
-.button--disabled:hover,
-.button--disabled:focus,
-.button--disabled:active {
-  outline: none;
-  background-color: #e5e5e5;
-  pointer-events: none;
 }
 
 /* header */
@@ -571,7 +571,7 @@ body {
 
 .reason {
   padding: 112.5px 20px;
-  color: #000000;
+  color: #333333;
 }
 
 .reasons-item--has-image .reason {
@@ -706,6 +706,7 @@ body {
 
 .search-button {
   display: block;
+  width: 100%;
   max-width: 376px;
   margin: 0 auto;
   font-size: 20px;
@@ -873,6 +874,7 @@ body {
 
 .field-input:disabled + .field-label {
   opacity: 0.2;
+  cursor: default;
 }
 
 .field-input:not(:disabled) + .field-label:hover {
@@ -919,6 +921,7 @@ body {
   line-height: 24px;
   transition: background-color 0.2s ease;
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   appearance: textfield;
 }
 
@@ -1622,7 +1625,8 @@ body {
   line-height: 20px;
   text-align: center;
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .quantity-input::-webkit-outer-spin-button,
