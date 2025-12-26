@@ -231,25 +231,29 @@
             <div class="field-date">
               <label class="field-title" for="date-from">Дата заезда:</label>
               <div class="date-wrapper">
-                <input class="date-input" type="text" name="date-from" id="date-from" placeholder="Укажите дату"
-                  value="27 апреля 2020" required>
-                <button class="date-button" type="button">
-                  <span class="visually-hidden">Выбрать дату заезда</span>
-                </button>
+                <div class="date-input-container">
+                  <input class="date-input" type="text" name="date-from" id="date-from" placeholder="Укажите дату"
+                    value="27 апреля 2020" required>
+                  <button class="date-button" type="button">
+                    <span class="visually-hidden">Выбрать дату заезда</span>
+                  </button>
+                </div>
+                <span class="field-message field-message--error">Мы не можем отправить вас в прошлое.</span>
               </div>
-              <span class="field-message field-message--error">Мы не можем отправить вас в прошлое.</span>
             </div>
 
             <div class="field-date">
               <label class="field-title" for="date-to">Дата выезда:</label>
               <div class="date-wrapper">
-                <input class="date-input" type="text" name="date-to" id="date-to" placeholder="Укажите дату"
-                  value="1 сентября 2023" required>
-                <button class="date-button" type="button">
-                  <span class="visually-hidden">Выбрать дату выезда</span>
-                </button>
+                <div class="date-input-container">
+                  <input class="date-input" type="text" name="date-to" id="date-to" placeholder="Укажите дату"
+                    value="1 сентября 2023" required>
+                  <button class="date-button" type="button">
+                    <span class="visually-hidden">Выбрать дату выезда</span>
+                  </button>
+                </div>
+                <span class="field-message">На эти даты есть свободные номера. Пока есть.</span>
               </div>
-              <span class="field-message">На эти даты есть свободные номера. Пока есть.</span>
             </div>
 
             <div class="field-guests">
@@ -280,7 +284,8 @@
                   <span class="tooltip-wrapper">
                     <i class="tooltip" tabindex="0" role="tooltip" aria-labelledby="children-quantity-tooltip"></i>
                     <span class="tooltip-content" id="children-quantity-tooltip">
-                      <i class="tooltip-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет
+                      <i class="tooltip-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18
+                        лет. Дети до 6 лет
                         размещаются бесплатно.</i>
                     </span>
                   </span>

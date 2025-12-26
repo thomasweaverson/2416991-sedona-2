@@ -1452,28 +1452,40 @@ body {
 
 .field-date {
   display: grid;
-  grid-template-rows: auto minmax(21px, auto);
   grid-template-columns: 137px 440px;
-  align-items: center;
-  gap: 4px 0;
+  align-items: flex-start;
 }
 
 .field-title {
+  padding: 12px 12px 0 0;
   color: #000000;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
   text-transform: capitalize;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .field-title--with-tooltip {
   display: flex;
+  padding: 11px 12px 0 0;
   align-items: center;
   gap: 10px;
 }
 
 .date-wrapper {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(21px, auto);
+  gap: 4px;
+}
+
+.date-input-container {
+  position: relative;
+  align-self: flex-start;
 }
 
 .date-input {
@@ -1548,7 +1560,6 @@ body {
 }
 
 .field-message {
-  grid-column: 2 / -1;
   padding: 0 0 0 20px;
   color: #333333;
   font-size: 16px;
@@ -1569,10 +1580,11 @@ body {
 }
 
 .field-people {
+  align-self: flex-start;
   display: grid;
   grid-template-rows: auto minmax(21px, auto);
   grid-template-columns: 137px auto;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px 0;
 }
 
@@ -1582,6 +1594,7 @@ body {
 }
 
 .guests-quantity {
+  align-self: flex-start;
   display: grid;
   grid-template-columns: 40px 30px 40px;
   width: -moz-fit-content;
@@ -1700,6 +1713,7 @@ body {
 
 .tooltip-wrapper {
   position: relative;
+  align-self: flex-start;
 }
 
 .tooltip {
